@@ -1,0 +1,57 @@
+title Getpocket 3 legged and Anilist
+
+participant GetPocket
+participant User
+participant Server
+participant Anilist
+
+User->Server:user visit root of website "/" (localhost:3000)
+Server->User: Sends 200 Okay, Returns Forms_for_User.html (form)
+User->Server:User User fills out form (year and season they want) \nand sned to the requests "/anime_list" (localhost:3000/anime_list)
+
+Server->Server:Saves task \nfrom user input
+
+alt Get request token 
+Server->GetPocket: send a request to https://getpocket.com/v3/oauth/request \n in order to get the request token
+GetPocket->Server:send 200 ok and the request token (code)
+end 
+
+Server->Server:saves request code
+Server->User: Sends 302 Redirect to getpocket with so that user can authorize and sign in the their account
+
+alt if user already log in before than upon authorize goto the redirect URL
+User->GetPocket:Browser sees 302, \nimmediately redirects to getpocket authorize page
+GetPocket->User:Ask user if grant permission to add,modify,retrieve user data
+User->GetPocket: User said yes
+GetPocket->User:Sends login form
+User->GetPocket:User logs in
+GetPocket->User: redirect user to the URL "localhost:3000/receive_code" in my case
+end 
+
+User->Server: Goes to "localhost:3000/receive_code" and function "get_access_token" is called
+
+alt get access token
+Server->GetPocket:send a request to get the access token (https://getpocket.com/v3/oauth/authorize) with customer key + request code
+GetPocket->Server: 200 ok and send the access token and username
+end
+Server->Server: saves access token \n+ username
+
+alt request to Anilist to get query
+Server->Anilist: send a request to get a list of anime from user input of season, year ('https://graphql.anilist.co')
+Anilist->Server:send 200 ok and return json list
+end
+
+Server->Server: parse the list and make it into an URL
+
+alt adding the anime url into their getpocket account
+Server->GetPocket: send a request to "https://getpocket.com/v3/send" to add an json array of urls (customerkey, access token, action:json array)
+GetPocket->Server:200 OK
+end 
+
+Server->User:Send 302 Redirect to URL of getpocket where they see thier list 
+
+User->GetPocket:Browser receives 302\n  Redirect to URL
+
+GetPocket->User:200 OK displays their get pocket account
+
+

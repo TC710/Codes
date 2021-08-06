@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AniList + GetPocket API: Add anime of the season and year release to your account</title>
+		<style>
+			body, form{
+				margin:20px auto;
+				max-width:800px;
+				overflow-x:hidden;
+			}
+			fieldset{
+				display: flex;
+			}
+			input#year{
+				flex-grow:50;
+				margin: 0 20px;
+			}
+			input#season{
+				flex-grow:50;
+				margin: 0 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="anime_list" method="get">
+			<fieldset>
+				<legend>AniList + Todoist : Adding anime to watch to a new todo list</legend>
+				<label for="year">Year Released:</label>
+				<input id="year" name="year" type="number" min = "1980" max = "2021" step ="1" required />
+				
+				<label for="season">         Season:</label>
+					<input type="radio" id="SPRING" name="season" value="SPRING" checked>
+					<label for="SPRING"> Spring </label><br>
+					<input type="radio" id="SUMMER" name="season" value="SUMMER">
+					<label for="SUMMER"> Summer </label><br>
+					<input type="radio" id="FALL" name="season" value="FALL">
+					<label for="FALL"> Fall </label><br>
+					<input type="radio" id="WINTER" name="season" value="WINTER">
+					<label for="WINTER"> Winter </label><br>
+				
+				<input type="submit" value="Submit" />
+			</fieldset>
+		</form>
+	</body>
+</html>

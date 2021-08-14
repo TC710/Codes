@@ -1,0 +1,2 @@
+com/example/datetime/BuildConfig.java
+ com.example.datetime.BuildConfig

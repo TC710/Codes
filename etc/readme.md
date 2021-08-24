@@ -1,1 +1,3 @@
-Random code
+Assessment and practices
+
+Works but unoptimize 

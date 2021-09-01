@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content="....">
+   <title> This is my Test Site </title>
+   <link rel="stylesheet" href="./css/table.css">
+   <style>
+
+   </style>
+</head>
+
+<body>
+   <div class="contactSection">
+      <h1>Tao Chen</h1>
+      <p>Contact infomation message me</p>
+      <p>My Phone in Resume</p>
+      <p>Email in Resume</p>
+   </div>
+   <table>
+      <tr>
+         <th>Web</th>
+         <th>Description</th>
+         <th>Link</th>
+      </tr>
+      <tr>
+         <td>
+            <div class="iconCont"><a href="https://www.linkedin.com/"><img class="icons"
+                     src="./images/Linkedin_icon.JPG" alt="Linkedin Icon"></a></div>
+            LinkedIn
+         </td>
+         <td>
+            <p>LinkedIn Portfolio</p>
+         </td>
+         <td><a
+               href="https://www.linkedin.com/in/tao-chen-5a0554209/">https://www.linkedin.com/in/tao-chen-5a0554209/</a>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <div class="iconCont"><a href="https://github.com/"><img class="icons" src="./images/Github_icon.JPG"
+                     alt="Github Icon"></a></div>
+            Github
+         </td>
+         <td>
+            <p>Projects that I share</p>
+         </td>
+         <td><a href="https://github.com/TC710">https://github.com/TC710</a></td>
+      </tr>
+      <tr>
+         <td>
+            <div class="iconCont"><a href="https://itch.io/"><img class="icons" src="./images/itch.io.JPG"
+                     alt="itch.io Icon"></a></div>
+            itch.io
+         </td>
+         <td>
+            <p>Made a simple game for CS370 project using Unreal Engine blueprint <br> Hosted by itch.io <br> Players
+               are chase by a cube, destory them by shooting
+               <br> *Volume may be loud, not fully functional in menu
+            </p>
+         </td>
+         <td><a href="https://gba123.itch.io/avoid-the-cubes">https://gba123.itch.io/avoid-the-cubes</a>
+         </td>
+      </tr>
+   </table>
+
+
+   <form class="forms" action="Animes" method="post">
+      <fieldset>
+         <legend>
+            <h3>Go to https://anilist.co/ for season and year requested</h3>
+         </legend>
+         <div class="years"><label for="year">Year Released: </label>
+            <input id="year" name="year" type="number" min="1980" max="2022" step="1" required>
+         </div>
+
+         <div class="seasons"><label for="Season">Season</label>
+            <input type="radio" id="SPRING" name="season" value="SPRING" checked>
+            <label for="SPRING"> Spring </label><br>
+            <input type="radio" id="SUMMER" name="season" value="SUMMER">
+            <label for="SUMMER"> Summer </label><br>
+            <input type="radio" id="FALL" name="season" value="FALL">
+            <label for="FALL"> Fall </label><br>
+            <input type="radio" id="WINTER" name="season" value="WINTER">
+            <label for="WINTER"> Winter </label><br>
+         </div>
+
+         <div class="submit"><input class="submitbutton" type="submit" value="Submit"></div>
+
+      </fieldset>
+
+   </form>
+
+
+</body>
+
+</html>

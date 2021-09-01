@@ -1,0 +1,55 @@
+table,
+th,
+td {
+   border: 1px solid black;
+   border-collapse: collapse;
+   padding: 10px;
+   text-align: center;
+}
+table {
+   margin-left:auto;
+   margin-right:auto;
+}
+
+.icons {
+   width: 75px;
+   border-radius: 50%;
+}
+
+.iconCont {
+      align-items: center;
+}
+
+.contactSection {  
+   text-align: center;
+   font-size: 20px;
+   line-height: 20%;
+}
+
+.forms{
+   padding-top: 10px;
+   width: 50%;
+   margin-left:auto;
+   margin-right:auto;
+}
+
+.years{
+   line-height: 35%;
+   float: left;
+  width: 30%;
+}
+
+.seasons{
+   float: left;
+   width: 30%;
+}
+.submit{
+   float: right;
+   width: 40%;
+   text-align: center;
+  
+}
+.submitbutton{
+   font-size: 20px;
+
+}
